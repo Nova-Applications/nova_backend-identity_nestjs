@@ -1,0 +1,17 @@
+{
+    "id": "0e856139-80cd-4125-9e26-02ee49e3af26",
+    "username": "admin@nova.com",
+    "firstName": "admin",
+    "lastName": "nova",
+    "imageUrl": "https://static.vecteezy.com/system/resources/previews/001/840/612/non_2x/picture-profile-icon-male-icon-human-or-people-sign-and-symbol-free-vector.jpg",
+    "email": "admin@nova.com",
+    "password": "$2b$10$.jbsPSWPFkoR3XFiCHrCI.LXUp7EapAYwALfRZCs8DKvI1f.WpfRC",
+    "phoneNumber": "936539420",
+    "identificationType": "DNI",
+    "identificationNumber": "72949109",
+    "role": "ADMIN",
+    "createdAt": "2024-12-30T18:13:29.877Z",
+    "createdBy": "SYSTEM",
+    "updatedAt": null,
+    "updatedBy": null
+}
