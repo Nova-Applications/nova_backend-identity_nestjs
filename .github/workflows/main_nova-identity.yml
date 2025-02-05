@@ -29,5 +29,5 @@ jobs:
         with:
           app-name: 'nova-identity'
           slot-name: 'Production'
-          package: .
+          package: './dist'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_E5F7B4472737493BBB22FCF415274F73 }}
