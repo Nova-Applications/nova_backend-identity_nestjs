@@ -9,6 +9,7 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
+    "start:stg": "nest build && node dist/main.js",
     "start:prod": "node dist/main.js"
   },
   "dependencies": {
