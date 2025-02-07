@@ -80,6 +80,7 @@ export class UserController {
     const currentUser =
       request[this.configService.get<string>('app.jwt.secret.name')];
     const command = new UpdateUserCommand(
+      currentUser.id,
       user.firstName,
       user.lastName,
       user.email,
@@ -107,7 +108,7 @@ export class UserController {
   @Get('/by/email/:email')
   public async getUserByEmail(@Param('email') email: string) {
     const command = new UserInfoQuery(null, email);
-    return await this.commandBus.execute(command);
+    return await this.queryBus.execute(command);
   }
 
   @Patch('/update-password')

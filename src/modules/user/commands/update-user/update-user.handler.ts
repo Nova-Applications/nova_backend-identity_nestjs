@@ -21,7 +21,7 @@ export class UpdateUserHandler implements ICommandHandler<UpdateUserCommand> {
 
       updatedUser.updatedBy = command.updatedBy;
       
-      const oldEntity = await this.userRepository.getUserByEmailAsync(command.email);
+      const oldEntity = await this.userRepository.getUserByIdAsync(command.id);
       const entity = await this.userRepository.updateEntityAsync(oldEntity, updatedUser);
 
       return await this.userRepository.update(entity.id, entity);

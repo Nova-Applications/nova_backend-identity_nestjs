@@ -4,7 +4,7 @@ import { UserModel } from '../../entities/user';
 import { UpdateUserPasswordCommand } from './update-user-password.command';
 
 @CommandHandler(UpdateUserPasswordCommand)
-export class UpdateUserImageHandler
+export class UpdateUserPasswordHandler
   implements ICommandHandler<UpdateUserPasswordCommand>
 {
   constructor(private userRepository: UserRepository) {}

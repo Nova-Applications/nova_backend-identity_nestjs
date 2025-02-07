@@ -7,8 +7,17 @@ import { AuthUserModule } from '../auth/auth-user.module';
 import { APP_GUARD } from '@nestjs/core';
 import { RolesGuard } from '../../common/guards/role.guard';
 import { CreateUserHandler } from './commands/create-user/create-user.handler';
+import { UpdateUserHandler } from './commands/update-user/update-user.handler';
+import { UpdateUserImageHandler } from './commands/update-user-image/update-user-image.handler';
+import { UpdateUserPasswordHandler } from './commands/update-user-password/update-user-password.handler';
 
-export const CommandHandlers = [UserInfoHandler, CreateUserHandler];
+export const CommandHandlers = [
+  CreateUserHandler,
+  UpdateUserHandler,
+  UpdateUserImageHandler,
+  UpdateUserPasswordHandler,
+];
+export const QueryHandlers = [UserInfoHandler];
 
 export const Controllers = [UserController];
 export const Repositories = [UserRepository];
@@ -19,8 +28,9 @@ export const Repositories = [UserRepository];
   providers: [
     ...Repositories,
     ...CommandHandlers,
+    ...QueryHandlers,
     { provide: APP_GUARD, useClass: RolesGuard },
   ],
-  exports: [...Repositories, ...CommandHandlers],
+  exports: [...Repositories, ...QueryHandlers, ...CommandHandlers],
 })
 export class UserModule {}
